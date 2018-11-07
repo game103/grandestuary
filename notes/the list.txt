@@ -1,0 +1,21 @@
+blank screen on lougout
+
+birds - 1500 moneys
+tigers - 4500 moneys
+goblins - 12000 moneys
+trolls - 25500 moneys
+dinos - 39000 moneys
+rockmen - 64500 moneys
+dragons - 111000 moneys
+
+stats&small text = sans
+
+map
+instance name - map
+x703.8
+y440.75
+w156.05
+h328.40
+
+now you set opponents attack to 0, and then you can attack again,
+before attack again, check if your attack has been set to 0;

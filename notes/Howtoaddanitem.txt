@@ -1,0 +1,12 @@
+in inventory
+on person
+in weapons number indicator
+in house
+on person if sword
+breastplate on login too
+code to pick up
+
+sword x 5
+sheild x 4
+helmet x 5
+breastplate x 4

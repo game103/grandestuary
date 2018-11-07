@@ -1,0 +1,72 @@
+
+autoload
+//register
+friend list - only play with friends
+//fix ent restore health when leave battle - maybe exit stat screen or too high
+success on purchases and item descriptions
+custom cursor - finish
+
+autoload item after uploaded
+fix tree respawn a little to right - no more x and yscale
+
+//save when logout
+//reload
+will display if you logged into room before them
+//fix logout allow to log back in
+//bear wont wander off to nowhere (restraints)
+//No more fish on dock
+//wolves can face directly straight up
+//as soon as equip or unequip horse show
+message look nicer
+//show horsey online
+AUTO RELOAD!!!!!!!!!!!!!!!
+//more programmed lag = no glithces
+//make sure reload login goes to right world
+trade glitch, make not visible.
+//small horse
+fix loading back
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!fix trade glitch
+
+items
+in store
+in inventory
+in house
+on person
+
+map
+less battle reward
+on login set some vairables in the php to none (ex. battlewith)
+challenge work? - on click go to blank screen
+overhall trade system
+battle second time work.
+fix battle glitches. searching?
+stop world timer loading on charge
+
+post office - fix undefined collect
+login and register and other connection errors
+battle system. When leave training/store, save, when charge, reload, use oppenents attack and defense along with your own.
+more items, items display in aerial view.
+
+Worlds
+World where you have to avoid being stomped on then attack
+//World where you have to push a button to attack
+//World where you have to ride through the enemys side without hitting head
+//World where you have to pick random chests hoping to advance
+World where you have to do a pvp battle against the computer * 2
+World where you have to answer a quiz
+//World where you have to click and heal
+//world with memory game
+
+1 Birds
+2 Tigers
+3 Goblins
+4 Trolls
+5 Dinosaurs
+6 Rock Men
+7 Dragons
+8 Giants
+
+Bears wont chase if your sailing
+P.O reposition lower
+make borders better
