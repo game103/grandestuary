@@ -9,13 +9,13 @@ $username = $_POST['username'];
 $trimmedusername = trim($username);
 $room = "None";
 
-$connect = mysql_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
-	mysql_select_db("hallaby_housekey");
+$connect = mysqli_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
+	mysqli_select_db($connect,"hallaby_housekey");
 
 	$str = "SELECT * FROM variables WHERE username = '$trimmedusername'";
-	$query = mysql_query($str);
+	$query = mysqli_query($connect,$str);
 	
 	$insert = "UPDATE variables SET room='$room' WHERE username='$trimmedusername'";
-	$insertquery = mysql_query($insert, $connect);
-	mysql_close();
+	$insertquery = mysqli_query($connect,$insert);
+	mysqli_close($connect);
 ?>

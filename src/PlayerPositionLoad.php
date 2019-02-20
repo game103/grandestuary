@@ -20,15 +20,15 @@ require_once( 'Constants.class.php');
 	$playwith11 = $_POST['playwith11'];
 	$playwith12 = $_POST['playwith12'];
 	$trimmedroom = trim($room);
-	$connect = mysql_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
-	mysql_select_db("hallaby_housekey");
+	$connect = mysqli_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
+	mysqli_select_db($connect,"hallaby_housekey");
 
 	$str = "SELECT * FROM variables WHERE username = '$playwith'";
-	$query = mysql_query($str);
+	$query = mysqli_query($connect,$str);
 	
-	$num = mysql_num_rows($query);
+	$num = mysqli_num_rows($query);
 	
-	while($rows = mysql_fetch_array($query)):
+	while($rows = mysqli_fetch_array($query)):
 
 		$user = $rows['username'];
 		$x = $rows['x'];
@@ -40,11 +40,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str2 = "SELECT * FROM variables WHERE username = '$playwith2'";
-	$query2 = mysql_query($str2);
+	$query2 = mysqli_query($connect,$str2);
 	
-	$num2 = mysql_num_rows($query2);
+	$num2 = mysqli_num_rows($query2);
 	
-	while($rows2 = mysql_fetch_array($query2)):
+	while($rows2 = mysqli_fetch_array($query2)):
 
 		$user2 = $rows2['username'];
 		$x2 = $rows2['x'];
@@ -56,11 +56,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str3 = "SELECT * FROM variables WHERE username = '$playwith3'";
-	$query3 = mysql_query($str3);
+	$query3 = mysqli_query($connect,$str3);
 	
-	$num3 = mysql_num_rows($query3);
+	$num3 = mysqli_num_rows($query3);
 	
-	while($rows3 = mysql_fetch_array($query3)):
+	while($rows3 = mysqli_fetch_array($query3)):
 
 		$user3 = $rows3['username'];
 		$x3 = $rows3['x'];
@@ -72,11 +72,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str4 = "SELECT * FROM variables WHERE username = '$playwith4'";
-	$query4 = mysql_query($str4);
+	$query4 = mysqli_query($connect,$str4);
 	
-	$num4 = mysql_num_rows($query4);
+	$num4 = mysqli_num_rows($query4);
 	
-	while($rows4 = mysql_fetch_array($query4)):
+	while($rows4 = mysqli_fetch_array($query4)):
 
 		$user4 = $rows4['username'];
 		$x4 = $rows4['x'];
@@ -88,11 +88,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str5 = "SELECT * FROM variables WHERE username = '$playwith5'";
-	$query5 = mysql_query($str5);
+	$query5 = mysqli_query($connect,$str5);
 	
-	$num5 = mysql_num_rows($query5);
+	$num5 = mysqli_num_rows($query5);
 	
-	while($rows5 = mysql_fetch_array($query5)):
+	while($rows5 = mysqli_fetch_array($query5)):
 
 		$user5 = $rows5['username'];
 		$x5 = $rows5['x'];
@@ -104,11 +104,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str6 = "SELECT * FROM variables WHERE username = '$playwith6'";
-	$query6 = mysql_query($str6);
+	$query6 = mysqli_query($connect,$str6);
 	
-	$num6 = mysql_num_rows($query6);
+	$num6 = mysqli_num_rows($query6);
 	
-	while($rows6 = mysql_fetch_array($query6)):
+	while($rows6 = mysqli_fetch_array($query6)):
 
 		$user6 = $rows6['username'];
 		$x6 = $rows6['x'];
@@ -120,11 +120,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str7 = "SELECT * FROM variables WHERE username = '$playwith7'";
-	$query7 = mysql_query($str7);
+	$query7 = mysqli_query($connect,$str7);
 	
-	$num7 = mysql_num_rows($query7);
+	$num7 = mysqli_num_rows($query7);
 	
-	while($rows7 = mysql_fetch_array($query7)):
+	while($rows7 = mysqli_fetch_array($query7)):
 
 		$user7 = $rows7['username'];
 		$x7 = $rows7['x'];
@@ -136,11 +136,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str8 = "SELECT * FROM variables WHERE username = '$playwith8'";
-	$query8 = mysql_query($str8);
+	$query8 = mysqli_query($connect,$str8);
 	
-	$num8 = mysql_num_rows($query8);
+	$num8 = mysqli_num_rows($query8);
 	
-	while($rows8 = mysql_fetch_array($query8)):
+	while($rows8 = mysqli_fetch_array($query8)):
 
 		$user8 = $rows8['username'];
 		$x8 = $rows8['x'];
@@ -152,11 +152,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str9 = "SELECT * FROM variables WHERE username = '$playwith9'";
-	$query9 = mysql_query($str9);
+	$query9 = mysqli_query($connect,$str9);
 	
-	$num9 = mysql_num_rows($query9);
+	$num9 = mysqli_num_rows($query9);
 	
-	while($rows9 = mysql_fetch_array($query9)):
+	while($rows9 = mysqli_fetch_array($query9)):
 
 		$user9 = $rows9['username'];
 		$x9 = $rows9['x'];
@@ -168,11 +168,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str10 = "SELECT * FROM variables WHERE username = '$playwith10'";
-	$query10 = mysql_query($str10);
+	$query10 = mysqli_query($connect,$str10);
 	
-	$num10 = mysql_num_rows($query10);
+	$num10 = mysqli_num_rows($query10);
 	
-	while($rows10 = mysql_fetch_array($query10)):
+	while($rows10 = mysqli_fetch_array($query10)):
 
 		$user10 = $rows10['username'];
 		$x10 = $rows10['x'];
@@ -184,11 +184,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str11 = "SELECT * FROM variables WHERE username = '$playwith11'";
-	$query11 = mysql_query($str11);
+	$query11 = mysqli_query($connect,$str11);
 	
-	$num11 = mysql_num_rows($query11);
+	$num11 = mysqli_num_rows($query11);
 	
-	while($rows11 = mysql_fetch_array($query11)):
+	while($rows11 = mysqli_fetch_array($query11)):
 
 		$user11 = $rows11['username'];
 		$x11 = $rows11['x'];
@@ -200,11 +200,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str12 = "SELECT * FROM variables WHERE username = '$playwith12'";
-	$query12 = mysql_query($str12);
+	$query12 = mysqli_query($connect,$str12);
 	
-	$num12 = mysql_num_rows($query12);
+	$num12 = mysqli_num_rows($query12);
 	
-	while($rows12 = mysql_fetch_array($query12)):
+	while($rows12 = mysqli_fetch_array($query12)):
 
 		$user12 = $rows12['username'];
 		$x12 = $rows12['x'];
@@ -216,11 +216,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str13 = "SELECT * FROM variables WHERE username = '$playwith13'";
-	$query13 = mysql_query($str13);
+	$query13 = mysqli_query($connect,$str13);
 	
-	$num13 = mysql_num_rows($query13);
+	$num13 = mysqli_num_rows($query13);
 	
-	while($rows13 = mysql_fetch_array($query13)):
+	while($rows13 = mysqli_fetch_array($query13)):
 
 		$user13 = $rows13['username'];
 		$x13 = $rows13['x'];
@@ -232,11 +232,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str14 = "SELECT * FROM variables WHERE username = '$playwith14'";
-	$query14 = mysql_query($str14);
+	$query14 = mysqli_query($connect,$str14);
 	
-	$num14 = mysql_num_rows($query14);
+	$num14 = mysqli_num_rows($query14);
 	
-	while($rows14 = mysql_fetch_array($query14)):
+	while($rows14 = mysqli_fetch_array($query14)):
 
 		$user14 = $rows14['username'];
 		$x14 = $rows14['x'];
@@ -248,11 +248,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str15 = "SELECT * FROM variables WHERE username = '$playwith15'";
-	$query15 = mysql_query($str15);
+	$query15 = mysqli_query($connect,$str15);
 	
-	$num15 = mysql_num_rows($query15);
+	$num15 = mysqli_num_rows($query15);
 	
-	while($rows15 = mysql_fetch_array($query15)):
+	while($rows15 = mysqli_fetch_array($query15)):
 
 		$user15 = $rows15['username'];
 		$x15 = $rows15['x'];
@@ -264,11 +264,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str16 = "SELECT * FROM variables WHERE username = '$playwith16'";
-	$query16 = mysql_query($str16);
+	$query16 = mysqli_query($connect,$str16);
 	
-	$num16 = mysql_num_rows($query16);
+	$num16 = mysqli_num_rows($query16);
 	
-	while($rows16 = mysql_fetch_array($query16)):
+	while($rows16 = mysqli_fetch_array($query16)):
 
 		$user16 = $rows16['username'];
 		$x16 = $rows16['x'];
@@ -280,11 +280,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str17 = "SELECT * FROM variables WHERE username = '$playwith17'";
-	$query17 = mysql_query($str17);
+	$query17 = mysqli_query($connect,$str17);
 	
-	$num17 = mysql_num_rows($query17);
+	$num17 = mysqli_num_rows($query17);
 	
-	while($rows17 = mysql_fetch_array($query17)):
+	while($rows17 = mysqli_fetch_array($query17)):
 
 		$user17 = $rows17['username'];
 		$x17 = $rows17['x'];
@@ -296,11 +296,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str18 = "SELECT * FROM variables WHERE username = '$playwith18'";
-	$query18 = mysql_query($str18);
+	$query18 = mysqli_query($connect,$str18);
 	
-	$num18 = mysql_num_rows($query18);
+	$num18 = mysqli_num_rows($query18);
 	
-	while($rows18 = mysql_fetch_array($query18)):
+	while($rows18 = mysqli_fetch_array($query18)):
 
 		$user18 = $rows18['username'];
 		$x18 = $rows18['x'];
@@ -312,11 +312,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str19 = "SELECT * FROM variables WHERE username = '$playwith19'";
-	$query19 = mysql_query($str19);
+	$query19 = mysqli_query($connect,$str19);
 	
-	$num19 = mysql_num_rows($query19);
+	$num19 = mysqli_num_rows($query19);
 	
-	while($rows19 = mysql_fetch_array($query19)):
+	while($rows19 = mysqli_fetch_array($query19)):
 
 		$user19 = $rows19['username'];
 		$x19 = $rows19['x'];
@@ -328,11 +328,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str20 = "SELECT * FROM variables WHERE username = '$playwith20'";
-	$query20 = mysql_query($str20);
+	$query20 = mysqli_query($connect,$str20);
 	
-	$num20 = mysql_num_rows($query20);
+	$num20 = mysqli_num_rows($query20);
 	
-	while($rows20 = mysql_fetch_array($query20)):
+	while($rows20 = mysqli_fetch_array($query20)):
 
 		$user20 = $rows20['username'];
 		$x20 = $rows20['x'];
@@ -344,11 +344,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str21 = "SELECT * FROM variables WHERE username = '$playwith21'";
-	$query21 = mysql_query($str21);
+	$query21 = mysqli_query($connect,$str21);
 	
-	$num21 = mysql_num_rows($query21);
+	$num21 = mysqli_num_rows($query21);
 	
-	while($rows21 = mysql_fetch_array($query21)):
+	while($rows21 = mysqli_fetch_array($query21)):
 
 		$user21 = $rows21['username'];
 		$x21 = $rows21['x'];
@@ -360,11 +360,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str22 = "SELECT * FROM variables WHERE username = '$playwith22'";
-	$query22 = mysql_query($str22);
+	$query22 = mysqli_query($connect,$str22);
 	
-	$num22 = mysql_num_rows($query22);
+	$num22 = mysqli_num_rows($query22);
 	
-	while($rows22 = mysql_fetch_array($query22)):
+	while($rows22 = mysqli_fetch_array($query22)):
 
 		$user22 = $rows22['username'];
 		$x22 = $rows22['x'];
@@ -376,11 +376,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str23 = "SELECT * FROM variables WHERE username = '$playwith23'";
-	$query23 = mysql_query($str23);
+	$query23 = mysqli_query($connect,$str23);
 	
-	$num23 = mysql_num_rows($query23);
+	$num23 = mysqli_num_rows($query23);
 	
-	while($rows23 = mysql_fetch_array($query23)):
+	while($rows23 = mysqli_fetch_array($query23)):
 
 		$user23 = $rows23['username'];
 		$x23 = $rows23['x'];
@@ -392,11 +392,11 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	$str24 = "SELECT * FROM variables WHERE username = '$playwith24'";
-	$query24 = mysql_query($str24);
+	$query24 = mysqli_query($connect,$str24);
 	
-	$num24 = mysql_num_rows($query24);
+	$num24 = mysqli_num_rows($query24);
 	
-	while($rows24 = mysql_fetch_array($query24)):
+	while($rows24 = mysqli_fetch_array($query24)):
 
 		$user24 = $rows24['username'];
 		$x24 = $rows24['x'];
@@ -408,5 +408,5 @@ require_once( 'Constants.class.php');
 	endwhile;
 	
 	echo "&x=$x&y=$y&xp=$xp&message=$message&speed=$speed&x2=$x2&y2=$y2&xp2=$xp2&message2=$message2&speed2=$speed2&x3=$x3&y3=$y3&xp3=$xp3&message3=$message3&speed3=$speed3&x4=$x4&y4=$y4&xp4=$xp4&message4=$message4&speed4=$speed4&x5=$x5&y5=$y5&xp5=$xp5&message5=$message5&speed5=$speed5&x6=$x6&y6=$y6&xp6=$xp6&message6=$message6&speed6=$speed6&x7=$x7&y7=$y7&xp7=$xp7&message7=$message7&speed7=$speed7&x8=$x8&y8=$y8&xp8=$xp8&message8=$message8&speed8=$speed8&x9=$x9&y9=$y9&xp9=$xp9&message9=$message9&speed9=$speed9&x10=$x10&y10=$y10&xp10=$xp10&message10=$message10&speed10=$speed10&x11=$x11&y11=$y11&xp11=$xp11&message11=$message11&speed11=$speed11&x12=$x12&y12=$y12&xp12=$xp12&message12=$message12&speed12=$speed12&x13=$x13&y13=$y13&xp13=$xp13&message13=$message13&speed13=$speed13&x14=$x14&y14=$y14&xp14=$xp14&message14=$message14&speed14=$speed14&x15=$x15&y15=$y15&xp15=$xp15&message15=$message15&speed15=$speed15&x16=$x16&y16=$y16&xp16=$xp16&message16=$message16&speed16=$speed16&x17=$x17&y17=$y17&xp17=$xp17&message17=$message17&speed17=$speed17&x18=$x18&y18=$y18&xp18=$xp18&message18=$message18&speed18=$speed18&x19=$x19&y19=$y19&xp19=$xp19&message19=$message19&speed19=$speed19&x20=$x20&y20=$y20&xp20=$xp20&message20=$message20&speed20=$speed20&x21=$x21&y21=$y21&xp21=$xp21&message21=$message21&speed21=$speed21&x22=$x22&y22=$y22&xp22=$xp22&message22=$message22&speed22=$speed22&x23=$x23&y23=$y23&xp23=$xp23&message23=$message23&speed23=$speed23&x24=$x24&y24=$y24&xp24=$xp24&message24=$message24&speed24=$speed24";
-	mysql_close();
+	mysqli_close($connect);
 ?>

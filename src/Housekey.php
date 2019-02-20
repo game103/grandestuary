@@ -12,15 +12,15 @@
 	$room = $_POST['room'];
 	$trimmedroom = trim($room);
 	
-	$connect = mysql_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
-	mysql_select_db("hallaby_housekey");
+	$connect = mysqli_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
+	mysqli_select_db($connect,"hallaby_housekey");
 
 	$str = "SELECT * FROM variables WHERE BINARY username = '$trimmedusername' AND BINARY password='$trimmedpassword'";
-	$query = mysql_query($str);
+	$query = mysqli_query($connect,$str);
 	
-	$num = mysql_num_rows($query);
+	$num = mysqli_num_rows($query);
 	
-	while($rows = mysql_fetch_array($query)):
+	while($rows = mysqli_fetch_array($query)):
 
 		$moneys = $rows['moneys'];
 		$wood=$rows['wood'];
@@ -56,11 +56,11 @@
 	endwhile;
 	
 	$str2 = "SELECT * FROM variables WHERE room = '$trimmedroom' AND username != '$trimmedusername'";
-	$query2 = mysql_query($str2);
+	$query2 = mysqli_query($connect,$str2);
 	
-	$num2 = mysql_num_rows($query2);
+	$num2 = mysqli_num_rows($query2);
 	
-	while($rows2 = mysql_fetch_array($query2)):
+	while($rows2 = mysqli_fetch_array($query2)):
 
 		$playwith = $rows2['username'];
 		$c1moneys = $rows2['moneys'];
@@ -97,11 +97,11 @@
 	endwhile;
 	
 	$str3 = "SELECT * FROM variables WHERE room = '$trimmedroom' AND username != '$playwith' AND username != '$trimmedusername'";
-	$query3 = mysql_query($str3);
+	$query3 = mysqli_query($connect,$str3);
 	
-	$num3 = mysql_num_rows($query3);
+	$num3 = mysqli_num_rows($query3);
 	
-	while($rows3 = mysql_fetch_array($query3)):
+	while($rows3 = mysqli_fetch_array($query3)):
 
 		$playwith2 = $rows3['username'];
 		$c2moneys = $rows3['moneys'];
@@ -138,11 +138,11 @@
 	endwhile;
 	
 	$str4 = "SELECT * FROM variables WHERE room = '$trimmedroom' AND username != '$playwith' AND username != '$playwith2' AND username != '$trimmedusername'";
-	$query4 = mysql_query($str4);
+	$query4 = mysqli_query($connect,$str4);
 	
-	$num4 = mysql_num_rows($query4);
+	$num4 = mysqli_num_rows($query4);
 	
-	while($rows4 = mysql_fetch_array($query4)):
+	while($rows4 = mysqli_fetch_array($query4)):
 
 		$playwith3 = $rows4['username'];
 		$c3moneys = $rows4['moneys'];
@@ -179,11 +179,11 @@
 	endwhile;
 	
 	$str5 = "SELECT * FROM variables WHERE room = '$trimmedroom' AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3' AND username != '$trimmedusername'";
-	$query5 = mysql_query($str5);
+	$query5 = mysqli_query($connect,$str5);
 	
-	$num5 = mysql_num_rows($query5);
+	$num5 = mysqli_num_rows($query5);
 	
-	while($rows5 = mysql_fetch_array($query5)):
+	while($rows5 = mysqli_fetch_array($query5)):
 
 		$playwith4 = $rows5['username'];
 		$c4moneys = $rows5['moneys'];
@@ -220,11 +220,11 @@
 	endwhile;
 	
 	$str6 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$trimmedusername'";
-	$query6 = mysql_query($str6);
+	$query6 = mysqli_query($connect,$str6);
 	
-	$num6 = mysql_num_rows($query6);
+	$num6 = mysqli_num_rows($query6);
 	
-	while($rows6 = mysql_fetch_array($query6)):
+	while($rows6 = mysqli_fetch_array($query6)):
 
 		$playwith5 = $rows6['username'];
 		$c5moneys = $rows6['moneys'];
@@ -261,11 +261,11 @@
 	endwhile;
 	
 	$str7 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$trimmedusername'";
-	$query7 = mysql_query($str7);
+	$query7 = mysqli_query($connect,$str7);
 	
-	$num7 = mysql_num_rows($query7);
+	$num7 = mysqli_num_rows($query7);
 	
-	while($rows7 = mysql_fetch_array($query7)):
+	while($rows7 = mysqli_fetch_array($query7)):
 
 		$playwith6 = $rows7['username'];
 		$c6moneys = $rows7['moneys'];
@@ -302,11 +302,11 @@
 	endwhile;
 	
 	$str8 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6' AND username != '$trimmedusername'";
-	$query8 = mysql_query($str8);
+	$query8 = mysqli_query($connect,$str8);
 	
-	$num8 = mysql_num_rows($query8);
+	$num8 = mysqli_num_rows($query8);
 	
-	while($rows8 = mysql_fetch_array($query8)):
+	while($rows8 = mysqli_fetch_array($query8)):
 
 		$playwith7 = $rows8['username'];
 		$c7moneys = $rows8['moneys'];
@@ -343,11 +343,11 @@
 	endwhile;
 	
 	$str9 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$trimmedusername'";
-	$query9 = mysql_query($str9);
+	$query9 = mysqli_query($connect,$str9);
 	
-	$num9 = mysql_num_rows($query9);
+	$num9 = mysqli_num_rows($query9);
 	
-	while($rows9 = mysql_fetch_array($query9)):
+	while($rows9 = mysqli_fetch_array($query9)):
 
 		$playwith8 = $rows9['username'];
 		$c8moneys = $rows9['moneys'];
@@ -384,11 +384,11 @@
 	endwhile;
 	
 	$str10 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$trimmedusername'";
-	$query10 = mysql_query($str10);
+	$query10 = mysqli_query($connect,$str10);
 	
-	$num10 = mysql_num_rows($query10);
+	$num10 = mysqli_num_rows($query10);
 	
-	while($rows10 = mysql_fetch_array($query10)):
+	while($rows10 = mysqli_fetch_array($query10)):
 
 		$playwith9 = $rows10['username'];
 		$c9moneys = $rows10['moneys'];
@@ -425,11 +425,11 @@
 	endwhile;
 	
 	$str11 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$trimmedusername'";
-	$query11 = mysql_query($str11);
+	$query11 = mysqli_query($connect,$str11);
 	
-	$num11 = mysql_num_rows($query11);
+	$num11 = mysqli_num_rows($query11);
 	
-	while($rows11 = mysql_fetch_array($query11)):
+	while($rows11 = mysqli_fetch_array($query11)):
 
 		$playwith10 = $rows11['username'];
 		$c10moneys = $rows11['moneys'];
@@ -466,11 +466,11 @@
 	endwhile;
 	
 	$str12 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$trimmedusername'";
-	$query12 = mysql_query($str12);
+	$query12 = mysqli_query($connect,$str12);
 	
-	$num12 = mysql_num_rows($query12);
+	$num12 = mysqli_num_rows($query12);
 	
-	while($rows12 = mysql_fetch_array($query12)):
+	while($rows12 = mysqli_fetch_array($query12)):
 
 		$playwith11 = $rows12['username'];
 		$c11moneys = $rows12['moneys'];
@@ -507,11 +507,11 @@
 	endwhile;
 	
 	$str13 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$playwith11'  AND username != '$trimmedusername'";
-	$query13 = mysql_query($str13);
+	$query13 = mysqli_query($connect,$str13);
 	
-	$num13 = mysql_num_rows($query13);
+	$num13 = mysqli_num_rows($query13);
 	
-	while($rows13 = mysql_fetch_array($query13)):
+	while($rows13 = mysqli_fetch_array($query13)):
 
 		$playwith12 = $rows13['username'];
 		$c12moneys = $rows13['moneys'];
@@ -548,11 +548,11 @@
 	endwhile;
 	
 	$str14 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$playwith11' AND username != '$playwith12' AND username != '$trimmedusername'";
-	$query14 = mysql_query($str14);
+	$query14 = mysqli_query($connect,$str14);
 	
-	$num14 = mysql_num_rows($query14);
+	$num14 = mysqli_num_rows($query14);
 	
-	while($rows14 = mysql_fetch_array($query14)):
+	while($rows14 = mysqli_fetch_array($query14)):
 
 		$playwith13 = $rows14['username'];
 		$c13moneys = $rows14['moneys'];
@@ -589,11 +589,11 @@
 	endwhile;
 	
 	$str15 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$playwith11' AND username != '$playwith12' AND username != '$playwith13' AND username != '$trimmedusername'";
-	$query15 = mysql_query($str15);
+	$query15 = mysqli_query($connect,$str15);
 	
-	$num15 = mysql_num_rows($query15);
+	$num15 = mysqli_num_rows($query15);
 	
-	while($rows15 = mysql_fetch_array($query15)):
+	while($rows15 = mysqli_fetch_array($query15)):
 
 		$playwith14 = $rows15['username'];
 		$c14moneys = $rows15['moneys'];
@@ -630,11 +630,11 @@
 	endwhile;
 	
 	$str16 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$playwith11' AND username != '$playwith12' AND username != '$playwith13' AND username != '$playwith14' AND username != '$trimmedusername'";
-	$query16 = mysql_query($str16);
+	$query16 = mysqli_query($connect,$str16);
 	
-	$num16 = mysql_num_rows($query16);
+	$num16 = mysqli_num_rows($query16);
 	
-	while($rows16 = mysql_fetch_array($query16)):
+	while($rows16 = mysqli_fetch_array($query16)):
 
 		$playwith15 = $rows16['username'];
 		$c15moneys = $rows16['moneys'];
@@ -671,11 +671,11 @@
 	endwhile;
 	
 	$str17 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$playwith11' AND username != '$playwith12' AND username != '$playwith13' AND username != '$playwith14' AND username != '$playwith15' AND username != '$trimmedusername'";
-	$query17 = mysql_query($str17);
+	$query17 = mysqli_query($connect,$str17);
 	
-	$num17 = mysql_num_rows($query17);
+	$num17 = mysqli_num_rows($query17);
 	
-	while($rows17 = mysql_fetch_array($query17)):
+	while($rows17 = mysqli_fetch_array($query17)):
 
 		$playwith16 = $rows17['username'];
 		$c16moneys = $rows17['moneys'];
@@ -712,11 +712,11 @@
 	endwhile;
 	
 	$str18 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$playwith11' AND username != '$playwith12' AND username != '$playwith13' AND username != '$playwith14' AND username != '$playwith15' AND username != '$playwith16' AND username != '$trimmedusername'";
-	$query18 = mysql_query($str18);
+	$query18 = mysqli_query($connect,$str18);
 	
-	$num18 = mysql_num_rows($query18);
+	$num18 = mysqli_num_rows($query18);
 	
-	while($rows18 = mysql_fetch_array($query18)):
+	while($rows18 = mysqli_fetch_array($query18)):
 
 		$playwith17 = $rows18['username'];
 		$c17moneys = $rows18['moneys'];
@@ -753,11 +753,11 @@
 	endwhile;
 	
 	$str19 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$playwith11' AND username != '$playwith12' AND username != '$playwith13' AND username != '$playwith14' AND username != '$playwith15' AND username != '$playwith16' AND username != '$playwith17' AND username != '$trimmedusername'";
-	$query19 = mysql_query($str19);
+	$query19 = mysqli_query($connect,$str19);
 	
-	$num19 = mysql_num_rows($query19);
+	$num19 = mysqli_num_rows($query19);
 	
-	while($rows19 = mysql_fetch_array($query19)):
+	while($rows19 = mysqli_fetch_array($query19)):
 
 		$playwith18 = $rows19['username'];
 		$c18moneys = $rows19['moneys'];
@@ -794,11 +794,11 @@
 	endwhile;
 	
 	$str20 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$playwith11' AND username != '$playwith12' AND username != '$playwith13' AND username != '$playwith14' AND username != '$playwith15' AND username != '$playwith16' AND username != '$playwith17' AND username != '$playwith18' AND username != '$trimmedusername'";
-	$query20 = mysql_query($str20);
+	$query20 = mysqli_query($connect,$str20);
 	
-	$num20 = mysql_num_rows($query20);
+	$num20 = mysqli_num_rows($query20);
 	
-	while($rows20 = mysql_fetch_array($query20)):
+	while($rows20 = mysqli_fetch_array($query20)):
 
 		$playwith19 = $rows20['username'];
 		$c19moneys = $rows20['moneys'];
@@ -835,11 +835,11 @@
 	endwhile;
 	
 	$str21 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$playwith11' AND username != '$playwith12' AND username != '$playwith13' AND username != '$playwith14' AND username != '$playwith15' AND username != '$playwith16' AND username != '$playwith17' AND username != '$playwith18' AND username != '$playwith19' AND username != '$trimmedusername'";
-	$query21 = mysql_query($str21);
+	$query21 = mysqli_query($connect,$str21);
 	
-	$num21 = mysql_num_rows($query21);
+	$num21 = mysqli_num_rows($query21);
 	
-	while($rows21 = mysql_fetch_array($query21)):
+	while($rows21 = mysqli_fetch_array($query21)):
 
 		$playwith20 = $rows21['username'];
 		$c20moneys = $rows21['moneys'];
@@ -876,11 +876,11 @@
 	endwhile;
 	
 	$str22 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$playwith11' AND username != '$playwith12' AND username != '$playwith13' AND username != '$playwith14' AND username != '$playwith15' AND username != '$playwith16' AND username != '$playwith17' AND username != '$playwith18' AND username != '$playwith19' AND username != '$playwith20' AND username != '$trimmedusername'";
-	$query22 = mysql_query($str22);
+	$query22 = mysqli_query($connect,$str22);
 	
-	$num22 = mysql_num_rows($query22);
+	$num22 = mysqli_num_rows($query22);
 	
-	while($rows22 = mysql_fetch_array($query22)):
+	while($rows22 = mysqli_fetch_array($query22)):
 
 		$playwith21 = $rows22['username'];
 		$c21moneys = $rows22['moneys'];
@@ -917,11 +917,11 @@
 	endwhile;
 	
 	$str23 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$playwith11' AND username != '$playwith12' AND username != '$playwith13' AND username != '$playwith14' AND username != '$playwith15' AND username != '$playwith16' AND username != '$playwith17' AND username != '$playwith18' AND username != '$playwith19' AND username != '$playwith20' AND username != '$playwith21' AND username != '$trimmedusername'";
-	$query23 = mysql_query($str23);
+	$query23 = mysqli_query($connect,$str23);
 	
-	$num23 = mysql_num_rows($query23);
+	$num23 = mysqli_num_rows($query23);
 	
-	while($rows23 = mysql_fetch_array($query23)):
+	while($rows23 = mysqli_fetch_array($query23)):
 
 		$playwith22 = $rows23['username'];
 		$c22moneys = $rows23['moneys'];
@@ -958,11 +958,11 @@
 	endwhile;
 	
 	$str24 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$playwith11' AND username != '$playwith12' AND username != '$playwith13' AND username != '$playwith14' AND username != '$playwith15' AND username != '$playwith16' AND username != '$playwith17' AND username != '$playwith18' AND username != '$playwith19' AND username != '$playwith20' AND username != '$playwith21' AND username != '$playwith22' AND username != '$trimmedusername'";
-	$query24 = mysql_query($str24);
+	$query24 = mysqli_query($connect,$str24);
 	
-	$num24 = mysql_num_rows($query24);
+	$num24 = mysqli_num_rows($query24);
 	
-	while($rows24 = mysql_fetch_array($query24)):
+	while($rows24 = mysqli_fetch_array($query24)):
 
 		$playwith23 = $rows24['username'];
 		$c23moneys = $rows24['moneys'];
@@ -999,11 +999,11 @@
 	endwhile;
 	
 	$str25 = "SELECT * FROM variables WHERE room = '$trimmedroom'  AND username != '$playwith' AND username != '$playwith2' AND username != '$playwith3'  AND username != '$playwith4' AND username != '$playwith5' AND username != '$playwith6'  AND username != '$playwith7' AND username != '$playwith8' AND username != '$playwith9' AND username != '$playwith10' AND username != '$playwith11' AND username != '$playwith12' AND username != '$playwith13' AND username != '$playwith14' AND username != '$playwith15' AND username != '$playwith16' AND username != '$playwith17' AND username != '$playwith18' AND username != '$playwith19' AND username != '$playwith20' AND username != '$playwith21' AND username != '$playwith22' AND username != '$playwith23'  AND username != '$trimmedusername'";
-	$query25 = mysql_query($str25);
+	$query25 = mysqli_query($connect,$str25);
 	
-	$num25 = mysql_num_rows($query25);
+	$num25 = mysqli_num_rows($query25);
 	
-	while($rows25 = mysql_fetch_array($query25)):
+	while($rows25 = mysqli_fetch_array($query25)):
 
 		$playwith24 = $rows25['username'];
 		$c24moneys = $rows25['moneys'];
@@ -1040,5 +1040,5 @@
 	endwhile;
 	
 	echo "&moneys=$moneys&wood=$wood&fish=$fish&cotton=$cotton&xp=$xp&attack=$attack&defense=$defense&health=$health&job=$job&item1=$item1&item2=$item2&item3=$item3&item4=$item4&item5=$item5&item6=$item6&item7=$item7&item8=$item8&item9=$item9&item10=$item10&headequipped=$headequipped&bodyequipped=$bodyequipped&lefthandequipped=$lefthandequipped&righthandequipped=$righthandequipped&legsequipped=$legsequipped&leftfootequipped=$leftfootequipped&rightfootequipped=$rightfootequipped&playwith=$playwith&c1moneys=$c1moneys&c1wood=$c1wood&c1fish=$c1fish&c1cotton=$c1cotton&c1xp=$c1xp&c1attack=$c1attack&c1defense=$c1defense&c1health=$c1health&c1job=$c1job&c1item1=$c1item1&c1item2=$c1item2&c1item3=$c1item3&c1item4=$c1item4&c1item5=$c1item5&c1item6=$c1item6&c1item7=$c1item7&c1item8=$c1item8&c1item9=$c1item9&c1item10=$c1item10&c1headequipped=$c1headequipped&c1bodyequipped=$c1bodyequipped&c1lefthandequipped=$c1lefthandequipped&c1righthandequipped=$c1righthandequipped&c1legsequipped=$c1legsequipped&c1leftfootequipped=$c1leftfootequipped&c1rightfootequipped=$c1rightfootequipped&playwith2=$playwith2&c2moneys=$c2moneys&c2wood=$c2wood&c2fish=$c2fish&c2cotton=$c2cotton&c2xp=$c2xp&c2attack=$c2attack&c2defense=$c2defense&c2health=$c2health&c2job=$c2job&c2item1=$c2item1&c2item2=$c2item2&c2item3=$c2item3&c2item4=$c2item4&c2item5=$c2item5&c2item6=$c2item6&c2item7=$c2item7&c2item8=$c2item8&c2item9=$c2item9&c2item10=$c2item10&c2headequipped=$c2headequipped&c2bodyequipped=$c2bodyequipped&c2lefthandequipped=$c2lefthandequipped&c2righthandequipped=$c2righthandequipped&c2legsequipped=$c2legsequipped&c2leftfootequipped=$c2leftfootequipped&c2rightfootequipped=$c2rightfootequipped&playwith3=$playwith3&c3moneys=$c3moneys&c3wood=$c3wood&c3fish=$c3fish&c3cotton=$c3cotton&c3xp=$c3xp&c3attack=$c3attack&c3defense=$c3defense&c3health=$c3health&c3job=$c3job&c3item1=$c3item1&c3item2=$c3item2&c3item3=$c3item3&c3item4=$c3item4&c3item5=$c3item5&c3item6=$c3item6&c3item7=$c3item7&c3item8=$c3item8&c3item9=$c3item9&c3item10=$c3item10&c3headequipped=$c3headequipped&c3bodyequipped=$c3bodyequipped&c3lefthandequipped=$c3lefthandequipped&c3righthandequipped=$c3righthandequipped&c3legsequipped=$c3legsequipped&c3leftfootequipped=$c3leftfootequipped&c3rightfootequipped=$c3rightfootequipped&playwith4=$playwith4&c4moneys=$c4moneys&c4wood=$c4wood&c4fish=$c4fish&c4cotton=$c4cotton&c4xp=$c4xp&c4attack=$c4attack&c4defense=$c4defense&c4health=$c4health&c4job=$c4job&c4item1=$c4item1&c4item2=$c4item2&c4item3=$c4item3&c4item4=$c4item4&c4item5=$c4item5&c4item6=$c4item6&c4item7=$c4item7&c4item8=$c4item8&c4item9=$c4item9&c4item10=$c4item10&c4headequipped=$c4headequipped&c4bodyequipped=$c4bodyequipped&c4lefthandequipped=$c4lefthandequipped&c4righthandequipped=$c4righthandequipped&c4legsequipped=$c4legsequipped&c4leftfootequipped=$c4leftfootequipped&c4rightfootequipped=$c4rightfootequipped&playwith5=$playwith5&c5moneys=$c5moneys&c5wood=$c5wood&c5fish=$c5fish&c5cotton=$c5cotton&c5xp=$c5xp&c5attack=$c5attack&c5defense=$c5defense&c5health=$c5health&c5job=$c5job&c5item1=$c5item1&c5item2=$c5item2&c5item3=$c5item3&c5item4=$c5item4&c5item5=$c5item5&c5item6=$c5item6&c5item7=$c5item7&c5item8=$c5item8&c5item9=$c5item9&c5item10=$c5item10&c5headequipped=$c5headequipped&c5bodyequipped=$c5bodyequipped&c5lefthandequipped=$c5lefthandequipped&c5righthandequipped=$c5righthandequipped&c5legsequipped=$c5legsequipped&c5leftfootequipped=$c5leftfootequipped&c5rightfootequipped=$c5rightfootequipped&playwith6=$playwith6&c6moneys=$c6moneys&c6wood=$c6wood&c6fish=$c6fish&c6cotton=$c6cotton&c6xp=$c6xp&c6attack=$c6attack&c6defense=$c6defense&c6health=$c6health&c6job=$c6job&c6item1=$c6item1&c6item2=$c6item2&c6item3=$c6item3&c6item4=$c6item4&c6item5=$c6item5&c6item6=$c6item6&c6item7=$c6item7&c6item8=$c6item8&c6item9=$c6item9&c6item10=$c6item10&c6headequipped=$c6headequipped&c6bodyequipped=$c6bodyequipped&c6lefthandequipped=$c6lefthandequipped&c6righthandequipped=$c6righthandequipped&c6legsequipped=$c6legsequipped&c6leftfootequipped=$c6leftfootequipped&c6rightfootequipped=$c6rightfootequipped&playwith7=$playwith7&c7moneys=$c7moneys&c7wood=$c7wood&c7fish=$c7fish&c7cotton=$c7cotton&c7xp=$c7xp&c7attack=$c7attack&c7defense=$c7defense&c7health=$c7health&c7job=$c7job&c7item1=$c7item1&c7item2=$c7item2&c7item3=$c7item3&c7item4=$c7item4&c7item5=$c7item5&c7item6=$c7item6&c7item7=$c7item7&c7item8=$c7item8&c7item9=$c7item9&c7item10=$c7item10&c7headequipped=$c7headequipped&c7bodyequipped=$c7bodyequipped&c7lefthandequipped=$c7lefthandequipped&c7righthandequipped=$c7righthandequipped&c7legsequipped=$c7legsequipped&c7leftfootequipped=$c7leftfootequipped&c7rightfootequipped=$c7rightfootequipped&playwith8=$playwith8&c8moneys=$c8moneys&c8wood=$c8wood&c8fish=$c8fish&c8cotton=$c8cotton&c8xp=$c8xp&c8attack=$c8attack&c8defense=$c8defense&c8health=$c8health&c8job=$c8job&c8item1=$c8item1&c8item2=$c8item2&c8item3=$c8item3&c8item4=$c8item4&c8item5=$c8item5&c8item6=$c8item6&c8item7=$c8item7&c8item8=$c8item8&c8item9=$c8item9&c8item10=$c8item10&c8headequipped=$c8headequipped&c8bodyequipped=$c8bodyequipped&c8lefthandequipped=$c8lefthandequipped&c8righthandequipped=$c8righthandequipped&c8legsequipped=$c8legsequipped&c8leftfootequipped=$c8leftfootequipped&c8rightfootequipped=$c8rightfootequipped&playwith9=$playwith9&c9moneys=$c9moneys&c9wood=$c9wood&c9fish=$c9fish&c9cotton=$c9cotton&c9xp=$c9xp&c9attack=$c9attack&c9defense=$c9defense&c9health=$c9health&c9job=$c9job&c9item1=$c9item1&c9item2=$c9item2&c9item3=$c9item3&c9item4=$c9item4&c9item5=$c9item5&c9item6=$c9item6&c9item7=$c9item7&c9item8=$c9item8&c9item9=$c9item9&c9item10=$c9item10&c9headequipped=$c9headequipped&c9bodyequipped=$c9bodyequipped&c9lefthandequipped=$c9lefthandequipped&c9righthandequipped=$c9righthandequipped&c9legsequipped=$c9legsequipped&c9leftfootequipped=$c9leftfootequipped&c9rightfootequipped=$c9rightfootequipped&playwith10=$playwith10&c10moneys=$c10moneys&c10wood=$c10wood&c10fish=$c10fish&c10cotton=$c10cotton&c10xp=$c10xp&c10attack=$c10attack&c10defense=$c10defense&c10health=$c10health&c10job=$c10job&c10item1=$c10item1&c10item2=$c10item2&c10item3=$c10item3&c10item4=$c10item4&c10item5=$c10item5&c10item6=$c10item6&c10item7=$c10item7&c10item8=$c10item8&c10item9=$c10item9&c10item10=$c10item10&c10headequipped=$c10headequipped&c10bodyequipped=$c10bodyequipped&c10lefthandequipped=$c10lefthandequipped&c10righthandequipped=$c10righthandequipped&c10legsequipped=$c10legsequipped&c10leftfootequipped=$c10leftfootequipped&c10rightfootequipped=$c10rightfootequipped&playwith11=$playwith11&c11moneys=$c11moneys&c11wood=$c11wood&c11fish=$c11fish&c11cotton=$c11cotton&c11xp=$c11xp&c11attack=$c11attack&c11defense=$c11defense&c11health=$c11health&c11job=$c11job&c11item1=$c11item1&c11item2=$c11item2&c11item3=$c11item3&c11item4=$c11item4&c11item5=$c11item5&c11item6=$c11item6&c11item7=$c11item7&c11item8=$c11item8&c11item9=$c11item9&c11item10=$c11item10&c11headequipped=$c11headequipped&c11bodyequipped=$c11bodyequipped&c11lefthandequipped=$c11lefthandequipped&c11righthandequipped=$c11righthandequipped&c11legsequipped=$c11legsequipped&c11leftfootequipped=$c11leftfootequipped&c11rightfootequipped=$c11rightfootequipped&playwith12=$playwith12&c12moneys=$c12moneys&c12wood=$c12wood&c12fish=$c12fish&c12cotton=$c12cotton&c12xp=$c12xp&c12attack=$c12attack&c12defense=$c12defense&c12health=$c12health&c12job=$c12job&c12item1=$c12item1&c12item2=$c12item2&c12item3=$c12item3&c12item4=$c12item4&c12item5=$c12item5&c12item6=$c12item6&c12item7=$c12item7&c12item8=$c12item8&c12item9=$c12item9&c12item10=$c12item10&c12headequipped=$c12headequipped&c12bodyequipped=$c12bodyequipped&c12lefthandequipped=$c12lefthandequipped&c12righthandequipped=$c12righthandequipped&c12legsequipped=$c12legsequipped&c12leftfootequipped=$c12leftfootequipped&c12rightfootequipped=$c12rightfootequipped&playwith13=$playwith13&c13moneys=$c13moneys&c13wood=$c13wood&c13fish=$c13fish&c13cotton=$c13cotton&c13xp=$c13xp&c13attack=$c13attack&c13defense=$c13defense&c13health=$c13health&c13job=$c13job&c13item1=$c13item1&c13item2=$c13item2&c13item3=$c13item3&c13item4=$c13item4&c13item5=$c13item5&c13item6=$c13item6&c13item7=$c13item7&c13item8=$c13item8&c13item9=$c13item9&c13item10=$c13item10&c13headequipped=$c13headequipped&c13bodyequipped=$c13bodyequipped&c13lefthandequipped=$c13lefthandequipped&c13righthandequipped=$c13righthandequipped&c13legsequipped=$c13legsequipped&c13leftfootequipped=$c13leftfootequipped&c13rightfootequipped=$c13rightfootequipped&playwith14=$playwith14&c14moneys=$c14moneys&c14wood=$c14wood&c14fish=$c14fish&c14cotton=$c14cotton&c14xp=$c14xp&c14attack=$c14attack&c14defense=$c14defense&c14health=$c14health&c14job=$c14job&c14item1=$c14item1&c14item2=$c14item2&c14item3=$c14item3&c14item4=$c14item4&c14item5=$c14item5&c14item6=$c14item6&c14item7=$c14item7&c14item8=$c14item8&c14item9=$c14item9&c14item10=$c14item10&c14headequipped=$c14headequipped&c14bodyequipped=$c14bodyequipped&c14lefthandequipped=$c14lefthandequipped&c14righthandequipped=$c14righthandequipped&c14legsequipped=$c14legsequipped&c14leftfootequipped=$c14leftfootequipped&c14rightfootequipped=$c14rightfootequipped&playwith15=$playwith15&c15moneys=$c15moneys&c15wood=$c15wood&c15fish=$c15fish&c15cotton=$c15cotton&c15xp=$c15xp&c15attack=$c15attack&c15defense=$c15defense&c15health=$c15health&c15job=$c15job&c15item1=$c15item1&c15item2=$c15item2&c15item3=$c15item3&c15item4=$c15item4&c15item5=$c15item5&c15item6=$c15item6&c15item7=$c15item7&c15item8=$c15item8&c15item9=$c15item9&c15item10=$c15item10&c15headequipped=$c15headequipped&c15bodyequipped=$c15bodyequipped&c15lefthandequipped=$c15lefthandequipped&c15righthandequipped=$c15righthandequipped&c15legsequipped=$c15legsequipped&c15leftfootequipped=$c15leftfootequipped&c15rightfootequipped=$c15rightfootequipped&playwith16=$playwith16&c16moneys=$c16moneys&c16wood=$c16wood&c16fish=$c16fish&c16cotton=$c16cotton&c16xp=$c16xp&c16attack=$c16attack&c16defense=$c16defense&c16health=$c16health&c16job=$c16job&c16item1=$c16item1&c16item2=$c16item2&c16item3=$c16item3&c16item4=$c16item4&c16item5=$c16item5&c16item6=$c16item6&c16item7=$c16item7&c16item8=$c16item8&c16item9=$c16item9&c16item10=$c16item10&c16headequipped=$c16headequipped&c16bodyequipped=$c16bodyequipped&c16lefthandequipped=$c16lefthandequipped&c16righthandequipped=$c16righthandequipped&c16legsequipped=$c16legsequipped&c16leftfootequipped=$c16leftfootequipped&c16rightfootequipped=$c16rightfootequipped&playwith17=$playwith17&c17moneys=$c17moneys&c17wood=$c17wood&c17fish=$c17fish&c17cotton=$c17cotton&c17xp=$c17xp&c17attack=$c17attack&c17defense=$c17defense&c17health=$c17health&c17job=$c17job&c17item1=$c17item1&c17item2=$c17item2&c17item3=$c17item3&c17item4=$c17item4&c17item5=$c17item5&c17item6=$c17item6&c17item7=$c17item7&c17item8=$c17item8&c17item9=$c17item9&c17item10=$c17item10&c17headequipped=$c17headequipped&c17bodyequipped=$c17bodyequipped&c17lefthandequipped=$c17lefthandequipped&c17righthandequipped=$c17righthandequipped&c17legsequipped=$c17legsequipped&c17leftfootequipped=$c17leftfootequipped&c17rightfootequipped=$c17rightfootequipped&playwith18=$playwith18&c18moneys=$c18moneys&c18wood=$c18wood&c18fish=$c18fish&c18cotton=$c18cotton&c18xp=$c18xp&c18attack=$c18attack&c18defense=$c18defense&c18health=$c18health&c18job=$c18job&c18item1=$c18item1&c18item2=$c18item2&c18item3=$c18item3&c18item4=$c18item4&c18item5=$c18item5&c18item6=$c18item6&c18item7=$c18item7&c18item8=$c18item8&c18item9=$c18item9&c18item10=$c18item10&c18headequipped=$c18headequipped&c18bodyequipped=$c18bodyequipped&c18lefthandequipped=$c18lefthandequipped&c18righthandequipped=$c18righthandequipped&c18legsequipped=$c18legsequipped&c18leftfootequipped=$c18leftfootequipped&c18rightfootequipped=$c18rightfootequipped&playwith19=$playwith19&c19moneys=$c19moneys&c19wood=$c19wood&c19fish=$c19fish&c19cotton=$c19cotton&c19xp=$c19xp&c19attack=$c19attack&c19defense=$c19defense&c19health=$c19health&c19job=$c19job&c19item1=$c19item1&c19item2=$c19item2&c19item3=$c19item3&c19item4=$c19item4&c19item5=$c19item5&c19item6=$c19item6&c19item7=$c19item7&c19item8=$c19item8&c19item9=$c19item9&c19item10=$c19item10&c19headequipped=$c19headequipped&c19bodyequipped=$c19bodyequipped&c19lefthandequipped=$c19lefthandequipped&c19righthandequipped=$c19righthandequipped&c19legsequipped=$c19legsequipped&c19leftfootequipped=$c19leftfootequipped&c19rightfootequipped=$c19rightfootequipped&playwith20=$playwith20&c20moneys=$c20moneys&c20wood=$c20wood&c20fish=$c20fish&c20cotton=$c20cotton&c20xp=$c20xp&c20attack=$c20attack&c20defense=$c20defense&c20health=$c20health&c20job=$c20job&c20item1=$c20item1&c20item2=$c20item2&c20item3=$c20item3&c20item4=$c20item4&c20item5=$c20item5&c20item6=$c20item6&c20item7=$c20item7&c20item8=$c20item8&c20item9=$c20item9&c20item10=$c20item10&c20headequipped=$c20headequipped&c20bodyequipped=$c20bodyequipped&c20lefthandequipped=$c20lefthandequipped&c20righthandequipped=$c20righthandequipped&c20legsequipped=$c20legsequipped&c20leftfootequipped=$c20leftfootequipped&c20rightfootequipped=$c20rightfootequipped&playwith21=$playwith21&c21moneys=$c21moneys&c21wood=$c21wood&c21fish=$c21fish&c21cotton=$c21cotton&c21xp=$c21xp&c21attack=$c21attack&c21defense=$c21defense&c21health=$c21health&c21job=$c21job&c21item1=$c21item1&c21item2=$c21item2&c21item3=$c21item3&c21item4=$c21item4&c21item5=$c21item5&c21item6=$c21item6&c21item7=$c21item7&c21item8=$c21item8&c21item9=$c21item9&c21item10=$c21item10&c21headequipped=$c21headequipped&c21bodyequipped=$c21bodyequipped&c21lefthandequipped=$c21lefthandequipped&c21righthandequipped=$c21righthandequipped&c21legsequipped=$c21legsequipped&c21leftfootequipped=$c21leftfootequipped&c21rightfootequipped=$c21rightfootequipped&playwith22=$playwith22&c22moneys=$c22moneys&c22wood=$c22wood&c22fish=$c22fish&c22cotton=$c22cotton&c22xp=$c22xp&c22attack=$c22attack&c22defense=$c22defense&c22health=$c22health&c22job=$c22job&c22item1=$c22item1&c22item2=$c22item2&c22item3=$c22item3&c22item4=$c22item4&c22item5=$c22item5&c22item6=$c22item6&c22item7=$c22item7&c22item8=$c22item8&c22item9=$c22item9&c22item10=$c22item10&c22headequipped=$c22headequipped&c22bodyequipped=$c22bodyequipped&c22lefthandequipped=$c22lefthandequipped&c22righthandequipped=$c22righthandequipped&c22legsequipped=$c22legsequipped&c22leftfootequipped=$c22leftfootequipped&c22rightfootequipped=$c22rightfootequipped&playwith23=$playwith23&c23moneys=$c23moneys&c23wood=$c23wood&c23fish=$c23fish&c23cotton=$c23cotton&c23xp=$c23xp&c23attack=$c23attack&c23defense=$c23defense&c23health=$c23health&c23job=$c23job&c23item1=$c23item1&c23item2=$c23item2&c23item3=$c23item3&c23item4=$c23item4&c23item5=$c23item5&c23item6=$c23item6&c23item7=$c23item7&c23item8=$c23item8&c23item9=$c23item9&c23item10=$c23item10&c23headequipped=$c23headequipped&c23bodyequipped=$c23bodyequipped&c23lefthandequipped=$c23lefthandequipped&c23righthandequipped=$c23righthandequipped&c23legsequipped=$c23legsequipped&c23leftfootequipped=$c23leftfootequipped&c23rightfootequipped=$c23rightfootequipped&playwith24=$playwith24&c24moneys=$c24moneys&c24wood=$c24wood&c24fish=$c24fish&c24cotton=$c24cotton&c24xp=$c24xp&c24attack=$c24attack&c24defense=$c24defense&c24health=$c24health&c24job=$c24job&c24item1=$c24item1&c24item2=$c24item2&c24item3=$c24item3&c24item4=$c24item4&c24item5=$c24item5&c24item6=$c24item6&c24item7=$c24item7&c24item8=$c24item8&c24item9=$c24item9&c24item10=$c24item10&c24headequipped=$c24headequipped&c24bodyequipped=$c24bodyequipped&c24lefthandequipped=$c24lefthandequipped&c24righthandequipped=$c24righthandequipped&c24legsequipped=$c24legsequipped&c24leftfootequipped=$c24leftfootequipped&c24rightfootequipped=$c24rightfootequipped&success=$num&success2=$num2";
-	mysql_close();
+	mysqli_close($connect);
 	?>

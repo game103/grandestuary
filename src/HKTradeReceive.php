@@ -8,20 +8,20 @@
 	$username = $_POST['username'];
 	$trimmedusername = trim($username);
 
-	$connect = mysql_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
-	mysql_select_db("hallaby_housekey");
+	$connect = mysqli_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
+	mysqli_select_db($connect,"hallaby_housekey");
 
 	$str = "SELECT * FROM variables WHERE username = '$trimmedusername'";
-	$query = mysql_query($str);
+	$query = mysqli_query($connect,$str);
 	
-	$num = mysql_num_rows($query);
+	$num = mysqli_num_rows($query);
 	
-	while($rows = mysql_fetch_array($query)):
+	while($rows = mysqli_fetch_array($query)):
 
 		$parcel = $rows['parcel'];
 
 	endwhile;
 	
 	echo "&parcel=$parcel";
-	mysql_close();
+	mysqli_close($connect);
 ?>

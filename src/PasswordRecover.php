@@ -5,24 +5,24 @@ set_include_path($_SERVER['DOCUMENT_ROOT']  . "/" . "modules");
 
 require_once( 'Constants.class.php');
 
-$connect = mysql_connect( Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD) or die("Could not connect");
-mysql_select_db("hallaby_housekey") or die("Could not find database");
+$connect = mysqli_connect( Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD) or die("Could not connect");
+mysqli_select_db($connect,"hallaby_housekey") or die("Could not find database");
 
 $email = $_POST['email'];
-$email = mysql_real_escape_string($email);
+$email = mysqli_real_escape_string($connect,$email);
 
 if ($email)
 {
 
-$query = mysql_query("SELECT * FROM userlist WHERE email='$email'");
+$query = mysqli_query($connect,"SELECT * FROM userlist WHERE email='$email'");
 
-$numrows = mysql_num_rows($query);
+$numrows = mysqli_num_rows($query);
 
 
 //if the username exists (numrows) then itll check if its valid
 if($numrows!=0)
 {
-	while ($row = mysql_fetch_assoc($query))
+	while ($row = mysqli_fetch_assoc($query))
 	{
 		$username= $row['username'];
 		$password = $row['password'];

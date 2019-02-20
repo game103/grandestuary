@@ -41,13 +41,13 @@ $legsequipped=$_POST['legsequipped'];
 $leftfootequipped=$_POST['leftfootequipped'];
 $rightfootequipped=$_POST['rightfootequipped'];
 
-$connect = mysql_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
-	mysql_select_db("hallaby_housekey");
+$connect = mysqli_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
+	mysqli_select_db($connect,"hallaby_housekey");
 
 	$str = "SELECT * FROM variables WHERE username = '$trimmedusername' AND password='$trimmedpassword'";
-	$query = mysql_query($str);
+	$query = mysqli_query($connect,$str);
 	
 	$insert = "UPDATE variables SET moneys='$moneys', wood='$wood', fish='$fish', cotton='$cotton', xp='$xp', attack='$attack', defense='$defense', health='$health', item1='$item1', item2='$item2', item3='$item3', item4='$item4', item5='$item5', item6='$item6', item7='$item7', item8='$item8', item9='$item9', item10='$item10', item1='$item1',	headequipped='$headequipped', bodyequipped='$bodyequipped', lefthandequipped='$lefthandequipped', righthandequipped='$righthandequipped', legsequipped='$legsequipped', leftfootequipped='$leftfootequipped', rightfootequipped='$rightfootequipped' WHERE username='$trimmedusername'";
-	$insertquery = mysql_query($insert, $connect);
-	mysql_close();
+	$insertquery = mysqli_query($connect,$insert);
+	mysqli_close($connect);
 ?>

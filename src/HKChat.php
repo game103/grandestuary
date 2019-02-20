@@ -13,14 +13,14 @@
 	$trimmedpassword= trim($password);
 	
 
-$connect = mysql_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
-	mysql_select_db("hallaby_housekey");
+$connect = mysqli_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
+	mysqli_select_db($connect,"hallaby_housekey");
 
 	$str = "SELECT * FROM variables WHERE username = '$trimmedusername' AND password='$trimmedpassword'";
-	$query = mysql_query($str);
+	$query = mysqli_query($connect,$str);
 	
 	$insert = "UPDATE variables SET message='$notagsmessage' WHERE username='$trimmedusername'";
-	$insertquery = mysql_query($insert, $connect);
+	$insertquery = mysqli_query($connect,$insert);
 	echo $message;
-	mysql_close();
+	mysqli_close($connect);
 ?>

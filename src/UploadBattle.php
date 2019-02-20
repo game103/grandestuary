@@ -12,13 +12,13 @@ $trimmedusername = trim($username);
 $password = $_POST['password'];
 $trimmedpassword= trim($password);
 
-$connect = mysql_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
-	mysql_select_db("housekey");
+$connect = mysqli_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
+	mysqli_select_db($connect,"housekey");
 
 	$str = "SELECT * FROM variables WHERE username = '$trimmedusername'";
-	$query = mysql_query($str);
+	$query = mysqli_query($connect,$str);
 	
 	$insert = "UPDATE variables SET power='$power', ready='$ready' WHERE username='$trimmedusername'";
-	$insertquery = mysql_query($insert, $connect);
-	mysql_close();
+	$insertquery = mysqli_query($connect,$insert);
+	mysqli_close($connect);
 ?>

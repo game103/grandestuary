@@ -202,15 +202,15 @@ $trimmedusername = trim($username);
 		$y63 = $_POST['y63'];
 		$y64 = $_POST['y64'];
 
-$connect = mysql_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
-	mysql_select_db("hallaby_housekey");
+$connect = mysqli_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
+	mysqli_select_db($connect,"hallaby_housekey");
 
 	$str = "SELECT * FROM house WHERE username = '$trimmedusername'";
-	$query = mysql_query($str);
+	$query = mysqli_query($connect,$str);
 	
 	$insert = "UPDATE house SET hi1='$hi1', hi2='$hi2', hi3='$hi3', hi4='$hi4', hi5='$hi5', hi6='$hi6', hi7='$hi7', hi8='$hi8', hi9='$hi9', hi10='$hi10', hi11='$hi11', hi12='$hi12', hi13='$hi13', hi14='$hi14', hi15='$hi15', hi16='$hi16', hi17='$hi17', hi18='$hi18', hi19='$hi19', hi20='$hi20', hi21='$hi21', hi22='$hi22', hi23='$hi23', hi24='$hi24', hi25='$hi25', hi26='$hi26', hi27='$hi27', hi28='$hi28', hi29='$hi29', hi30='$hi30', hi31='$hi31', hi32='$hi32', hi33='$hi33', hi34='$hi34', hi35='$hi35', hi36='$hi36', hi37='$hi37', hi38='$hi38', hi39='$hi39', hi40='$hi40', hi41='$hi41', hi42='$hi42', hi43='$hi43', hi44='$hi44', hi45='$hi45', hi46='$hi46', hi47='$hi47', hi48='$hi48', hi49='$hi49', hi50='$hi50', hi51='$hi51', hi52='$hi52', hi53='$hi53', hi54='$hi54', hi55='$hi55', hi56='$hi56', hi57='$hi57', hi58='$hi58', hi59='$hi59', hi60='$hi60', hi61='$hi61', hi62='$hi62', hi63='$hi63', hi64='$hi64',1x='$x1',  2x='$x2',  3x='$x3',  4x='$x4',  5x='$x5',  6x='$x6',  7x='$x7',  8x='$x8',  9x='$x9',  10x='$x10',  11x='$x11',  12x='$x12',  13x='$x13',  14x='$x14',  15x='$x15',  16x='$x16',  17x='$x17',  18x='$x18',  19x='$x19',  20x='$x20',  21x='$x21',  22x='$x22',  23x='$x23',  24x='$x24',  25x='$x25',  26x='$x26',  27x='$x27',  28x='$x28',  29x='$x29',  30x='$x30',  31x='$x31',  32x='$x32',  33x='$x33',  34x='$x34',  35x='$x35',  36x='$x36',  37x='$x37',  38x='$x38',  39x='$x39',  40x='$x40',  41x='$x41',  42x='$x42',  43x='$x43',  44x='$x44',  45x='$x45',  46x='$x46',  47x='$x47',  48x='$x48',  49x='$x49',  50x='$x50',  51x='$x51',  52x='$x52',  53x='$x53',  54x='$x54',  55x='$x55',  56x='$x56',  57x='$x57',  58x='$x58',  59x='$x59',  60x='$x60',  61x='$x61',  62x='$x62',  63x='$x63',  64x='$x64', 1y='$y1',  2y='$y2',  3y='$y3',  4y='$y4',  5y='$y5',  6y='$y6',  7y='$y7',  8y='$y8',  9y='$y9',  10y='$y10',  11y='$y11',  12y='$y12',  13y='$y13',  14y='$y14',  15y='$y15',  16y='$y16',  17y='$y17',  18y='$y18',  19y='$y19',  20y='$y20',  21y='$y21',  22y='$y22',  23y='$y23',  24y='$y24',  25y='$y25',  26y='$y26',  27y='$y27',  28y='$y28',  29y='$y29',  30y='$y30',  31y='$y31',  32y='$y32',  33y='$y33',  34y='$y34',  35y='$y35',  36y='$y36',  37y='$y37',  38y='$y38',  39y='$y39',  40y='$y40',  41y='$y41',  42y='$y42',  43y='$y43',  44y='$y44',  45y='$y45',  46y='$y46',  47y='$y47',  48y='$y48',  49y='$y49',  50y='$y50',  51y='$y51',  52y='$y52',  53y='$y53',  54y='$y54',  55y='$y55',  56y='$y56',  57y='$y57',  58y='$y58',  59y='$y59',  60y='$y60',  61y='$y61',  62y='$y62',  63y='$y63',  64y='$y64' WHERE username='$trimmedusername'";
-	$insertquery = mysql_query($insert, $connect);
+	$insertquery = mysqli_query($connect,$insert);
 	
 	echo $x2;
-	mysql_close();
+	mysqli_close($connect);
 ?>
